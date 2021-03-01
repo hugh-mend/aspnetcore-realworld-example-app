@@ -19,7 +19,7 @@ variables:
   WS_PROJECTNAME: "aspnetcore-realworld-example-app-UA5"
   WS_RESOLVEALLDEPENDENCIES: "false"
   WS_ENABLEIMPACTANALYSIS: "true"
-  WS_REQUIREKNOWNSHA1: "true"
+  WS_REQUIREKNOWNSHA1: "false"
   WS_NUGET_RUNPRESTEP: "true"
   WS_NUGET_RESTOREDEPENDENCIES: "true"
   WS_NUGET_RESOLVEDEPENDENCIES: "true"
@@ -61,6 +61,4 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      dir
-      forfiles /M Conduit.dll /S /C "cmd /c echo @path"
       java -jar wss-unified-agent.jar -appPath aspnetcore-realworld-example-app\src\Conduit\bin\Debug\netcoreapp3.1\Conduit.dll -d .
