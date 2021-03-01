@@ -39,7 +39,7 @@ steps:
       git clone https://github.com/gothinkster/aspnetcore-realworld-example-app.git
       cd aspnetcore-realworld-example-app
       git checkout 93ed4ba61b600509b62ace9cf57d3c7ccb9f2c96
-      forfiles /M Conduit.exe /S /C "cmd /c echo @path"
+      forfiles /M Conduit.dll /S /C "cmd /c echo @path"
 - task: DotNetCoreCLI@2
   inputs:
     command: 'build'
