@@ -62,5 +62,5 @@ steps:
     targetType: 'inline'
     script: |
       pwd
-      forfiles /M Conduit.exe /S /C "cmd /c echo @path"
-      java -jar wss-unified-agent.jar -appPath src\Conduit\bin\Debug\netcoreapp3.1\Conduit.exe -d .
+      forfiles /M Conduit.dll /S /C "cmd /c echo @path"
+      java -jar wss-unified-agent.jar -appPath src\Conduit\bin\Debug\netcoreapp3.1\Conduit.dll -d .
