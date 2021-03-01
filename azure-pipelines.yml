@@ -61,6 +61,6 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      pwd
+      dir
       forfiles /M Conduit.dll /S /C "cmd /c echo @path"
-      java -jar wss-unified-agent.jar -appPath src\Conduit\bin\Debug\netcoreapp3.1\Conduit.dll -d .
+      java -jar wss-unified-agent.jar -appPath aspnetcore-realworld-example-app\src\Conduit\bin\Debug\netcoreapp3.1\Conduit.dll -d .
