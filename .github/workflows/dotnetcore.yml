@@ -12,7 +12,7 @@ jobs:
     - uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.100
-    - run: dotnet run -p build/build.csproj
+    - run: dotnet run -p src/Conduit/Conduit.csproj
     - name: WhiteSource Unified Agent Scan
       env:
         APIKEY: ${{secrets.APIKEY}}
