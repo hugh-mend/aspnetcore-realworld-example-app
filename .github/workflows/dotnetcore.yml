@@ -13,3 +13,18 @@ jobs:
       with:
         dotnet-version: 5.0.100
     - run: dotnet run -p build/build.csproj
+    - name: WhiteSource Unified Agent Scan
+      env:
+        APIKEY: ${{secrets.APIKEY}}
+      run: |
+        curl -LJO https://github.com/whitesource/unified-agent-distribution/releases/latest/download/wss-unified-agent.jar
+        echo UA downloaded successfully
+        export WS_ENABLEIMPACTANALYSIS=true
+        export WS_REQUIREKNOWNSHA1=false
+        export WS_RESOLVEALLDEPENDENCIES=false
+        export WS_NUGET_RESOLVEDEPENDENCIES=true
+        export WS_NUGET_RESTOREDEPENDENCIES=true
+        export WS_NUGET_RESOLVECSPROJFILES=true
+        export WS_NUGET_RESOLVENUSPECFILES=true
+        export WS_NUGET_RESOLVEPROJECTREFERENCE=true
+        java -jar wss-unified-agent.jar -appPath ./target/owaspSecurityShepherd.war -d ./ -apikey $APIKEY -product GH_${{ github.event.repository.name }} -project ${{ github.ref }}_Prioritize
