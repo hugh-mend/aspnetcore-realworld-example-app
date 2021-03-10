@@ -27,4 +27,4 @@ jobs:
         export WS_NUGET_RESOLVECSPROJFILES=true
         export WS_NUGET_RESOLVENUSPECFILES=true
         export WS_NUGET_RESOLVEPROJECTREFERENCE=true
-        java -jar wss-unified-agent.jar -appPath ./target/owaspSecurityShepherd.war -d ./ -apikey $APIKEY -product GH_${{ github.event.repository.name }} -project ${{ github.ref }}_Prioritize
+        java -jar wss-unified-agent.jar -appPath ./src/Conduit/bin/Debug/netcoreapp3.1/Conduit.dll -d ./ -apikey $APIKEY -product GH_${{ github.event.repository.name }} -project ${{ github.ref }}_Prioritize
