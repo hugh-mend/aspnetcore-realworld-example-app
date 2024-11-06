@@ -3,7 +3,7 @@
     "configMode": "AUTO",
     "configExternalURL": "",
     "baseBranches": [],
-    "enableIaC": true
+    "enableIaC": true,
     "enableLicenseViolations": true,
     "enableReachability": true,
     "exploitability": true,
